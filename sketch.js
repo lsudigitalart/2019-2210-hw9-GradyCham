@@ -1,3 +1,7 @@
+//Click on the lane of your favorite car to speed it up
+//If you speed your car up too much it will have to stop and start over again
+//BE careful! clicking on your car will make other cars speed up or slow down too to compete!
+
 var car, car2, car3, car4
 
 function setup() {
