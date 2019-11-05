@@ -30,37 +30,49 @@ function draw() {
   car3.move();
   car4.move();
   
-  if (car.x + 90 > 2000){
+  if (car.x + 90 > width){
     fill(0);
     rect (0,0, width, height);
     stroke(255);
     fill(255);
     textSize(350);
     text ("Car 1 Wins!", 50, 400);
+	car2.speed = 0;
+	car3.speed = 0;
+	car4.speed = 0;
   }
-  if (car2.x + 90 > 2000){
+  if (car2.x + 90 > width){
     fill(0);
     rect (0,0, width, height);
     stroke(255);
     fill(255);
     textSize(350);
     text ("Car 2 Wins!", 50, 400);
+	car.speed = 0;
+	car3.speed = 0;
+	car4.speed = 0;
   }
-  if (car3.x + 90 > 2000){
+  if (car3.x + 90 > width){
     fill(0);
     rect (0,0, width, height);
     stroke(255);
     fill(255);
     textSize(350);
     text ("Car 3 Wins!", 50, 400);
+	car.speed = 0;
+	car2.speed = 0;
+	car4.speed = 0;
   }
-  if (car4.x + 90 > 2000){
+  if (car4.x + 90 > width){
     fill(0);
     rect (0,0, width, height);
     stroke(255);
     fill(255);
     textSize(350);
     text ("Car 4 Wins!", 50, 400);
+	car.speed = 0;
+	car2.speed = 0;
+	car3.speed = 0;
   }
 }
 
@@ -95,40 +107,43 @@ this.move = function(){
 }
 
 function mouseReleased(){
-  if ( mouseY > 200 && mouseY < 350){
-    car.speed++;
-    car2.speed= int(random(1, 8));
-    car3.speed = int(random(1, 8));
-    car4.speed = int(random(1, 8));
-    if (car.speed > 8){
-      car.speed = 0;
-    }
-  }
-  if ( mouseY > 350 && mouseY < 500){
-    car.speed = int(random(1, 8));
-    car2.speed ++;
-    car3.speed = int(random(1, 8));
-    car4.speed = int(random(1, 8));
-    if (car2.speed > 8){
-      car2.speed = 0;
-    }
-  }
-  if ( mouseY > 500 && mouseY < 650){
-    car.speed = int(random(1, 8));
-    car2.speed = int(random(1, 8));
-    car3.speed++;
-    car4.speed = int(random(1, 8));
-    if (car3.speed > 8){
-      car3.speed = 0;
-    }
-  }
-  if ( mouseY > 500 && mouseY < 650){
-    car.speed = int(random(1, 8));
-    car2.speed = int(random(1, 8));
-    car3.speed = int(random(1, 8));
-    car4.speed++;
-    if (car4.speed > 8){
-      car4.speed = 0;
-    }
+  if (car.x + 90 < width && car2.x + 90 < width && car3.x + 90 < width && car4.x + 90 < width){
+	  
+  	if ( mouseY > 200 && mouseY < 350){
+  	  car.speed++;
+  	  car2.speed= int(random(1, 8));
+  	  car3.speed = int(random(1, 8));
+  	  car4.speed = int(random(1, 8));
+  	  if (car.speed > 8){
+  	    car.speed = 0;
+  	  }
+  	}
+  	if ( mouseY > 350 && mouseY < 500){
+  	  car.speed = int(random(1, 8));
+  	  car2.speed ++;
+  	  car3.speed = int(random(1, 8));
+  	  car4.speed = int(random(1, 8));
+  	  if (car2.speed > 8){
+  	    car2.speed = 0;
+  	  }
+  	}
+  	if ( mouseY > 500 && mouseY < 650){
+  	  car.speed = int(random(1, 8));
+  	  car2.speed = int(random(1, 8));
+  	  car3.speed++;
+  	  car4.speed = int(random(1, 8));
+  	  if (car3.speed > 8){
+  	    car3.speed = 0;
+  	  }
+  	}
+  	if ( mouseY > 500 && mouseY < 650){
+  	  car.speed = int(random(1, 8));
+  	  car2.speed = int(random(1, 8));
+  	  car3.speed = int(random(1, 8));
+  	  car4.speed++;
+  	  if (car4.speed > 8){
+  	    car4.speed = 0;
+  	  }
+  	}
   }
 }
